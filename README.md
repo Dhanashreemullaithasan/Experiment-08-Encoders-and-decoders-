@@ -62,35 +62,71 @@ D7 = X Y Z
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: DHANASHREE M 
+RegisterNumber:  212221230048
 */
 
+```
+## Encoders :
+
+module ex8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or (a,d4,d5,d6,d7);
+or (b,d2,d3,d6,d7);
+or (c,d1,d3,d5,d7);
+endmodule
+
+ ## Decoders :
+ 
+module ex8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=(~a&~b&~c); 
+assign d1=(~a&~b&c);
+assign d2=(~a&b&~c);
+assign d3=(~a&b&c);
+assign d4=(a&~b&~c);
+assign d5=(a&~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+
+```
+### RTL LOGIC  :
+
+## Encoders :
+
+![rtl ex8](https://user-images.githubusercontent.com/94165415/199721252-8e2a3b5f-67c2-4ea6-a68d-24c9a3f9fbbe.png)
+
+ ## Decoders :
+
+![rtl 2 ex8](https://user-images.githubusercontent.com/94165415/199723920-f1ce0094-b236-47f8-8062-75572952767d.png)
 
 
+### TIMING DIGRAMS  :
 
+## Encoders :
 
+![wf1 ex8](https://user-images.githubusercontent.com/94165415/199724221-37f712e8-f736-4fa5-aa25-5ac989840c27.png)
 
-### RTL LOGIC  
+![wf2 ex8](https://user-images.githubusercontent.com/94165415/199724261-234649cc-4e94-4356-b973-e07388274b98.png)
 
+![wf3 ex8](https://user-images.githubusercontent.com/94165415/199724155-ddb00074-35be-4776-97be-3f06e514ee33.png)
 
+## Decoders :
 
+![wfs2 ex8](https://user-images.githubusercontent.com/94165415/199724366-848ad38f-4b4f-47d1-90de-cd999cb70abf.png)
 
+### TRUTH TABLE :
+## Encoders :
 
+![tt8 2](https://user-images.githubusercontent.com/94165415/199752911-99e8497c-cf0d-409d-a432-a50f03842a04.png)
 
+## Decoders :
 
+![tt8](https://user-images.githubusercontent.com/94165415/199753139-650460c1-8656-4de9-9ce6-105bb5cce626.png)
 
-### TIMING DIGRAMS  
+### RESULTS :
 
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+8 to 3 Encoder and 3to8 Decoder has been implemented by using verilog and its outputs are validated.
